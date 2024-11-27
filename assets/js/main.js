@@ -37,13 +37,22 @@ const scrollHeader = () =>{
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== TESTIMONIAL SWIPER ===============*/
-let testimonialSwiper = new Swiper(".testimonial-swiper", {
-    spaceBetween: 30,
+let swiperProjects = new Swiper(".projects__container", {
+    spaceBetween: 24,
     loop: 'true',
 
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+    },
+    pagination:{
+        el:".swiper-pagination"
+    },
+    breakpoints:{
+        1200 :{
+            slidesPerView:2,
+            spaceBetween:-56,
+        },
     },
 });
 
