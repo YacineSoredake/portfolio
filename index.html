@@ -16,43 +16,43 @@
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Responsive portfolio website Chris - Bedimcode</title>
+        <title>portfolio Blaha Yacine</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="#" class="nav_logo">
+                <a href="#" class="nav__logo">
                     Yacine
                 </a>
-                <div class="nav_menu" id="nav-menu">
+                <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list grid">
                         <li class="nav__item">
-                            <a href="#Home" class="nav__link">
+                            <a href="#home" class="nav__link active-link">
                                 <i class="ri-home-line"></i> Home
                             </a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="#Skills" class="nav__link">
+                            <a href="#skills" class="nav__link">
                                 <i class="ri-trophy-line"></i> Skills
                             </a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="#Qualification" class="nav__link">
+                            <a href="#qualification" class="nav__link">
                                 <i class="ri-book-open-line"></i> Qualification
                             </a>
                         </li>
 
                         <li class="nav__item">
-                            <a href="#Services" class="nav__link">
+                            <a href="#services" class="nav__link">
                                 <i class="ri-briefcase-line"></i> Services
                             </a>
                         </li>
                             
                         <li class="nav__item">
-                            <a href="#Projects" class="nav__link">
+                            <a href="#projects" class="nav__link">
                                 <i class="ri-folder-line"></i> Projects
                             </a>
                         </li>
@@ -72,7 +72,7 @@
 
                 <div class="nav__buttons">
                     <!-- theme change button -->
-                    <!-- <i class="ri-moon-line change-theme" id="theme-button"></i> -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
 
                     <!-- toggle button -->
                      <div class="nav__toggle" id="nav-toggle">
@@ -98,8 +98,8 @@
                                 <img src="assets/img/perfil.png" alt="">
                             </dv>
 
-                            <!-- <img src="/assets/img/shape-wawes.svg" alt="" class="home__shape-waves">
-                            <img src="/assets/img/shape-circle.svg" alt="" class="home__shape-circle"> -->
+                            <img src="/assets/img/shape-wawes.svg" alt="" class="home__shape-waves">
+                            <img src="/assets/img/shape-circle.svg" alt="" class="home__shape-circle">
                         </div>
 
                         <ul class="home__social">
@@ -179,9 +179,10 @@
 
             <!--==================== SKILLS ====================-->
             <section class="skills section" id="skills">
+                <h2 class="section__title">Skills</h2>
                 <h3 class="section__subtitle">My favorite skills</h3>
 
-                <div class="skills__container container grid section__borde">
+                <div class="skills__container container grid section__border">
                     <!-- skill 1 -->
                     <div class="skills__content">
                         <h3 class="skills__title">
@@ -372,7 +373,7 @@
                         <div class="qualification__info">
                             <div>
                                 <h3 class="qualification__name">
-                                    Licence in Computer Systsems and Softawre Engineering
+                                    Licence in Computer <br> Systsems and Softawre Engineering
                                 </h3>
                                 <span class="qualification__country">SBA - Djilali Liabes</span>
                                 <span class="qualification__year">2022-2024</span>
@@ -534,12 +535,7 @@
                 <h2 class="section__title">Contact Me</h2>
                 <span class="section__subtitle">Get in touch</span>
 
-                <div class="contact_container container grid section_border">
-                    <div class="contact__content">
-                        <h3 class="contact__title">
-
-                        </h3>
-                    </div>
+                <div class="contact__container container grid section__border">
                     <div class="contact__content">
                         <h3 class="contact__title">
                             <i class="ri-chat-3-line"></i> Talk to me
@@ -555,25 +551,48 @@
                                 <span class="contact__data-title">Whatsapp</span>
                                 <span class="contact__data-info">+213 662207114</span>
 
-                                <a href="" class="contact__button">
-                                    Write me
+                                <a href="https://api.whatsapp.com/send?phone=213662207114&text=Hello, more information !" target="_blank" class="contact__button">
+                                    Write me <i class="ri-arrow-right-line"></i>
                                 </a>
                             </div>
 
                             <div class="contact__data">
-                                <span class="contact__data-title"></span>
-                                <span class="contact__data-info"></span>
+                                <span class="contact__data-title">Messenger</span>
+                                <span class="contact__data-info">@blaha yacine</span>
 
-                                <a href="" class="contact__button">
-                                    Write me
+                                <a href="https://m.me/blahayacine" target="_blank" class="contact__button">
+                                    Write me <i class="ri-arrow-right-line"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="contact_çcontent">
+                    <div class="contact__content">
                         <h3 class="contact__title">
-                            
+                            <i class="ri-send-plane-line"></i> Write me your request
                         </h3>
+
+                        <form action="" class="contact__form" id="contact-form">
+                            <div class="contact__form-div">
+                                <label class="contact__form-tag">Names</label>
+                                <input name="user_name" required type="text" class="contact__form-input" id="contact-name" placeholder="Write your name">
+                            </div>
+
+                            <div class="contact__form-div">
+                                <label class="contact__form-tag">Mail</label>
+                                <input name="user_email" required type="email" class="contact__form-input" id="contact-email" placeholder="Write your email">
+                            </div>
+
+                            <div class="contact__form-div contact__form-area">
+                                <label class="contact__form-tag">Request</label>
+                                <textarea name="user_project" placeholder="Write your request" id="contact-project" class="contact__form-input"></textarea>
+                            </div>
+
+                            <p class="contact__message" id="contact-message"></p>
+                            
+                            <button type="submit" class="contact__button">
+                                Submit <i class="ri-arrow-right-up-line"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -581,12 +600,50 @@
 
         <!--==================== FOOTER ====================-->
         <footer class="footer">
-            
+            <div class="footer__container container">
+                <h2 class="footer__title">Yacine</h2>
+                <p>Fullstack developer</p>
+
+                <ul class="footer__list">
+                    <li>
+                        <a href="#home" class="footer__link">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#skills" class="footer__link">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects" class="footer__link">Projects</a>
+                    </li>
+                </ul>
+
+                <ul class="footer__social">
+                    <a href="https://www.linkedin.com/in/blaha-yacine-3a747431a/" target="_blank" class="footer__social-link">
+                        <i class="ri-linkedin-box-line"></i>
+                    </a>
+
+                    <a href="https://github.com/YacineSoredake" target="_blank" class="footer__social-link">
+                        <i class="ri-github-fill"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/Shinei.Nouzen19" target="_blank" class="footer__social-link">
+                        <i class="ri-facebook-box-line"></i>
+                    </a>
+                </ul>
+
+                <span class="footer__copy">
+                    &#169; Copyright Yacine. All rights reserved
+                </span>
+            </div>
         </footer>
 
 
         <!--========== SCROLL UP ==========-->
         
+        <a href="" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a>
 
         <!--=============== SCROLLREVEAL ===============-->
         <script src="/assets/js/scrollreveal.min.js"></script>
@@ -596,7 +653,10 @@
         
         <!--=============== EMAIL JS ===============-->
         
-
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
     </body>

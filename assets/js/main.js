@@ -31,8 +31,8 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 const scrollHeader = () =>{
     const header = document.getElementById('header')
     // Add a class if the bottom offset is greater than 50 of the viewport
-    this.scrollY >= 50 ? header.classList.add('scroll-header') 
-                       : header.classList.remove('scroll-header')
+    this.scrollY >= 50 ? header.classList.add('bg-header') 
+                       : header.classList.remove('bg-header')
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -73,6 +73,41 @@ let newSwiper = new Swiper(".new-swiper", {
         },
     },
 });
+//////////////////email//////////////////////
+
+const contactForm = document.getElementById('contact-form');
+const contactName = document.getElementById('contact-name');
+const contactEmail = document.getElementById('contact-email');
+const contactProject = document.getElementById('contact-project');
+const contactMessage = document.querySelector('.contact__message');
+
+const sendEmail = (e) =>{
+    e.preventDefault()
+
+    if (contactName.value === '' || contactEmail.value === '' || contactProject.value==='') {
+        contactMessage.classList.remove('color-blue')
+        contactMessage.classList.add('color-red')
+
+        contactMessage.textContent = 'Please fill all the input fields'
+    } else {
+        emailjs.sendForm('service_mkexu1l','template_wo0v67s','#contact-form','DF0KewbzqDTPRXhHM')
+        .then(() => {
+            contactMessage.classList.add('color-blue');
+            contactMessage.textContent='Message sent'
+
+            setTimeout(() => {
+                contactMessage.textContent=''
+            },5000)
+        },(error) => {
+            alert('erro occured',error)
+        })
+
+        contactName.value='';
+        contactEmail.value='';
+        contactProject.value='';
+    }
+}
+contactForm.addEventListener('submit',sendEmail)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
@@ -92,10 +127,11 @@ const scrollActive = () =>{
 			sectionsClass.classList.remove('active-link')
 		}                                                    
 	})
+    
 }
 window.addEventListener('scroll', scrollActive)
 
-/*=============== SHOW SCROLL UP ===============*/ 
+// /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () =>{
 	const scrollUp = document.getElementById('scroll-up')
     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
@@ -103,32 +139,10 @@ const scrollUp = () =>{
 						: scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
-
-/*=============== SHOW CART ===============*/
-const cart = document.getElementById('cart'),
-      cartShop = document.getElementById('cart-shop'),
-      cartClose = document.getElementById('cart-close')
-
-/*===== CART SHOW =====*/
-/* Validate if constant exists */
-if(cartShop){
-    cartShop.addEventListener('click', () =>{
-        cart.classList.add('show-cart')
-    })
-}
-
-/*===== CART HIDDEN =====*/
-/* Validate if constant exists */
-if(cartClose){
-    cartClose.addEventListener('click', () =>{
-        cart.classList.remove('show-cart')
-    })
-}
-
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
-const iconTheme = 'bx-sun'
+const iconTheme = 'ri-sun-line'
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
@@ -136,13 +150,13 @@ const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx bx-moon' : 'bx bx-sun'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
+  themeButton.classList[selectedIcon === 'ri-moon-linen' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -154,3 +168,16 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+const sr = ScrollReveal({
+    origin:'top',
+    distance:'60px',
+    duration:2500,
+    delay:400
+})
+
+sr.reveal('.home__data,.projects__container,.footer__container')
+sr.reveal('.home__info div' , {delay:600,origin:'bottom',interval:100})
+sr.reveal('.skills__content:nth-child(1), .contact__content:nth-child(1)' , {origin:'left'})
+sr.reveal('.skills__content:nth-child(2), .contact__content:nth-child(2)' , {origin:'right'})
+sr.reveal('.qualification__content, .services__card' , {interval:100})
