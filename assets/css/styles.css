@@ -18,7 +18,7 @@
   /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
   --gradient-color: linear-gradient(180deg,
                       hsla(207, 48%, 72%, 0),
-                      hsla(207, 65%, 65%, 1));
+                      rgb(255, 128, 0));
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -321,18 +321,18 @@ body.dark-theme {
 }
 
 .home__perfil{
-  width: 170px;
+  width: 180px;
   height: 260px;
   background: var(--gradient-color);
   border-radius: 5.5rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items:stretch;
 }
 
 .home__perfil img{
-  width: 150px;
+  width: 190px;
 }
 
 .home__shape-waves,
@@ -1078,6 +1078,9 @@ body.dark-theme {
 @media screen and (min-width:1040px){
   .container{
     margin-inline: auto;
+  }
+  .skills__data{
+    justify-content: center;
   }
 }
 @media screen and (min-width:1200px){
