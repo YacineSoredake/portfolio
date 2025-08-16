@@ -75,40 +75,6 @@ let newSwiper = new Swiper(".new-swiper", {
 });
 //////////////////email//////////////////////
 
-const contactForm = document.getElementById('contact-form');
-const contactName = document.getElementById('contact-name');
-const contactEmail = document.getElementById('contact-email');
-const contactProject = document.getElementById('contact-project');
-const contactMessage = document.querySelector('.contact__message');
-
-const sendEmail = (e) =>{
-    e.preventDefault()
-
-    if (contactName.value === '' || contactEmail.value === '' || contactProject.value==='') {
-        contactMessage.classList.remove('color-blue')
-        contactMessage.classList.add('color-red')
-
-        contactMessage.textContent = 'Please fill all the input fields'
-    } else {
-        emailjs.sendForm('service_mkexu1l','template_wo0v67s','#contact-form','DF0KewbzqDTPRXhHM')
-        .then(() => {
-            contactMessage.classList.add('color-blue');
-            contactMessage.textContent='Message sent'
-
-            setTimeout(() => {
-                contactMessage.textContent=''
-            },5000)
-        },(error) => {
-            alert('erro occured',error)
-        })
-
-        contactName.value='';
-        contactEmail.value='';
-        contactProject.value='';
-    }
-}
-contactForm.addEventListener('submit',sendEmail)
-
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
     
