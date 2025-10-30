@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yacine Blaha | Professional Portfolio</title>
-    <link rel="icon" type="image/png" href="./assets/img/blaha-yacine-high-resolution-logo-transparent.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/img/blaha-yacine-high-resolution-logo-transparent.png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -675,6 +679,39 @@
       .project-links {
         display: flex;
         gap: 10px;
+      }
+
+      /* ===== Project Menu ===== */
+      .projects-menu {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .menu-btn {
+        background-color: transparent;
+        color: var(--text-secondary);
+        border: 2px solid rgba(0, 240, 255, 0.2);
+        padding: 0.7rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 500;
+      }
+
+      .menu-btn:hover {
+        background-color: rgba(0, 240, 255, 0.1);
+        color: var(--text);
+        border-color: var(--accent);
+      }
+
+      .menu-btn.active {
+        background-color: var(--accent);
+        color: var(--primary);
+        border-color: var(--accent);
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
       }
 
       /* Contact Section */
@@ -1356,8 +1393,17 @@
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
+
+        <!-- Project Filter Menu -->
+        <div class="projects-menu">
+          <button class="menu-btn" data-filter="web">Web Projects</button>
+          <button class="menu-btn" data-filter="mobile">Mobile Apps</button>
+          <button class="menu-btn" data-filter="ai">AI Projects</button>
+        </div>
+
         <div class="projects-grid">
-          <div class="project-card">
+          <!-- Web Projects -->
+          <div class="project-card" data-category="web">
             <div class="project-header">
               <div
                 style="
@@ -1396,7 +1442,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-header">
               <div
                 style="
@@ -1440,7 +1486,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-header">
               <div
                 style="
@@ -1482,7 +1528,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-category="web">
             <div class="project-header">
               <div
                 style="
@@ -1518,6 +1564,355 @@
                   class="btn btn-outline"
                   style="padding: 10px 20px"
                 >
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="web">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-plane" style="font-size: 4rem"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Backend for Travel agency CRM</h3>
+              <div class="project-tags">
+                <span class="project-tag">Nodejs</span>
+                <span class="project-tag">Mongodb</span>
+                <span class="project-tag">GoogleAuth</span>
+                <span class="project-tag">e-payment</span>
+              </div>
+              <p class="project-description">
+                Strong backend project (travel agency CRM with JWT, Google Auth,
+                RBAC, booking flow, payments, invoices, reports, emails, Redis
+                caching, etc.) usefull for reat world agency or used like a saas
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/YacineSoredake/Real-time-Chat-app"
+                  class="btn btn-outline"
+                  style="padding: 10px 20px"
+                >
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Projects -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-mobile-alt" style="font-size: 4rem"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Notes Mobile App</h3>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">Bloc</span>
+                <span class="project-tag">iOS & Android</span>
+              </div>
+              <p class="project-description">
+                A cross-platform task notes application with offline
+                capabilities ,and intuitive UI .
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="mobile">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <img
+                  src="assets/img/Capture d’écran 2025-10-30 221947.png"
+                  alt="Project cover"
+                />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                FindYourBuddy Event Mobile Application
+              </h3>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Dart</span>
+                <span class="project-tag">REST API</span>
+                <span class="project-tag">Node js</span>
+              </div>
+              <p class="project-description">
+                Mobile application designed to help people finding new friends
+                who share same interest by going together to events , workshops
+                festivals or just hanging out and having good time
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="mobile">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <img
+                  src="assets/img/Capture d’écran 2025-10-30 215957.png"
+                  alt="Project cover"
+                />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Demo Interface for Classifier model</h3>
+              <div class="project-tags">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">BLOC</span>
+                <span class="project-tag">FastAPi</span>
+                <span class="project-tag">Node js</span>
+              </div>
+              <p class="project-description">
+                Mobile application designed to showcase result returned from a
+                classifier model deployed using fastapi and connect with nodejs
+                backend and displayed to ui which is enhanced with bloc state
+                management
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Projects -->
+          <div class="project-card" data-category="ai">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-brain" style="font-size: 4rem"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                Aspect-Based-Sentiment-Analysis-on-Product-Reviews
+              </h3>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">TensorFlow</span>
+                <span class="project-tag">LLms</span>
+                <span class="project-tag">FastAPi</span>
+                <span class="project-tag">Gradio</span>
+              </div>
+              <p class="project-description">
+                This project implements a complete Aspect-Based Sentiment
+                Analysis (ABSA) pipeline on product reviews (laptops). It has
+                two main tasks: Aspect Term Extraction (ATE) Detect aspect terms
+                in review sentences (e.g., “battery life”, “keyboard”). Aspect
+                Sentiment Classification (ASC) Determine the sentiment (positive
+                / negative / neutral) expresse
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ai">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-brain" style="font-size: 4rem"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Movies Recommandation System</h3>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Pandas</span>
+              </div>
+              <p class="project-description">
+                Introduction to data manipulation using python libraries , with
+                building a system recommending similar movies using
+                K-nearnest-neighbors algorithm
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ai">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-robot" style="font-size: 4rem"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">dog-vs-cat-classifier</h3>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Tenseflow</span>
+                <span class="project-tag">CNN</span>
+                <span class="project-tag">Keras</span>
+              </div>
+              <p class="project-description">
+                About A deep learning project that classifies images of dogs and
+                cats using Convolutional Neural Networks (CNN) and Transfer
+                Learning (MobileNetV2). Built with TensorFlow/Keras, this
+                project demonstrates image preprocessing, model training,
+                evaluation, and prediction.
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ai">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+               <img
+                  src="assets/img/screenGradioDemo.png"
+                  alt="Project cover"
+                />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">LLM-Semantic-Book-Recommender</h3>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Transformers</span>
+                <span class="project-tag">FAISS</span>
+                <span class="project-tag">LangChain</span>
+              </div>
+              <p class="project-description">
+                A semantic book recommender system using LangChain, HuggingFace
+                sentence-transformer embeddings, FAISS vector search, and Gradio
+                for an interactive dashboard UI.
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
+                  <i class="fab fa-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ai">
+            <div class="project-header">
+              <div
+                style="
+                  height: 100%;
+                  background: linear-gradient(135deg, #1a1a2e, #0f0f1b);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-robot" style="font-size: 4rem"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                ONC MLP Neurone Network Model Using Matlab
+              </h3>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">MATLAB</span>
+                <span class="project-tag">NLP</span>
+              </div>
+              <p class="project-description">
+                Creating a simple model to recognize numbers using MLP and
+                displayed the result the model compared to the one shown by a
+                simple algoritm that used XOR
+              </p>
+              <div class="project-links">
+                <a href="#" class="btn btn-outline" style="padding: 10px 20px">
                   <i class="fab fa-github"></i> View Code
                 </a>
               </div>
@@ -1973,6 +2368,39 @@
         });
       };
 
+      const initProjectFilter = () => {
+        const filterButtons = document.querySelectorAll(".menu-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        // Hide all projects at the start
+        projectCards.forEach((card) => (card.style.display = "none"));
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Remove active class from all buttons
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            button.classList.add("active");
+
+            const filterValue = button.getAttribute("data-filter");
+
+            projectCards.forEach((card) => {
+              if (card.getAttribute("data-category") === filterValue) {
+                card.style.display = "block";
+                // Animate visible cards
+                gsap.fromTo(
+                  card,
+                  { opacity: 0, y: 20 },
+                  { opacity: 1, y: 0, duration: 0.5 }
+                );
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      };
+
       // Initialize everything on page load
       document.addEventListener("DOMContentLoaded", () => {
         initParticles();
@@ -1980,6 +2408,7 @@
         initNavigation();
         initMobileMenu();
         initScrollTop();
+        initProjectFilter();
 
         // Add hover effect to orb skills
         const orbSkills = document.querySelectorAll(".orb-skill");
